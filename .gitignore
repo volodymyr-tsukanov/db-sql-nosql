@@ -1,0 +1,9 @@
+# Security
+.env
+
+# Backups
+*.bak
+
+# Garbage
+.DS_Store
+Thumbs.db

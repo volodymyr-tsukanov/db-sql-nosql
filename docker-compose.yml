@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  mysql:
+    image: docker.io/mysql:8.0-debian
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "127.0.0.1:3301:3306"   # loopback a
+      - "192.168.147.5:3310:3306"   # LAN(wlo1) a
+    volumes:
+      - univ6_mysql:/var/lib/mysql
+  mongodb:
+    image: docker.io/mongo:8.0-noble
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - "127.0.0.1:27011:27017"   # loopback b
+      - "192.168.147.5:27021:27017"   # LAN(wlo1) b
+    volumes:
+      - univ6_mongo:/data/db
+
+volumes:
+  univ6_mysql:
+    driver: local
+  univ6_mongo:
+    driver: local

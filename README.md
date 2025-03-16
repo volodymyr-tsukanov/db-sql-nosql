@@ -4,6 +4,10 @@ Database management (SQL &amp; noSQL) <br>
 **mySQL**, **MySQL Workbench**; **MongoDB**
 
 
+## Simple guide
+- remove any ' VISIBLE' from exported SQL
+
+
 Shields: [![EPL-2.0][epl2-shield]][epl2]
 
 [epl2]: https://www.eclipse.org/legal/epl-2.0/

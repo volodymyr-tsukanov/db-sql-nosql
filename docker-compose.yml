@@ -15,8 +15,8 @@ services:
     volumes:
       - univ6_mysql:/var/lib/mysql
     resource_limits:
-      memory: 512m
-      cpus: 0.5
+      memory: 256m
+      cpus: 0.4
   mongodb:
     image: docker.io/mongo:8.0-noble
     container_name: univ6-mongo_cnt
@@ -29,8 +29,8 @@ services:
     volumes:
       - univ6_mongo:/data/db
     resource_limits:
-      memory: 512m
-      cpus: 0.5
+      memory: 256m
+      cpus: 0.4
 
 volumes:
   univ6_mysql:

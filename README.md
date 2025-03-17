@@ -5,7 +5,7 @@ Database management (SQL &amp; noSQL) <br>
 
 
 ## Simple guide
-- remove any ' VISIBLE' from exported SQL
+- remove any `VISIBLE` from exported SQL
 
 
 Shields: [![EPL-2.0][epl2-shield]][epl2]

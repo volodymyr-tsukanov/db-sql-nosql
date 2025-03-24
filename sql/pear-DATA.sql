@@ -1,142 +1,180 @@
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
---
--- Host: 127.0.0.1    Database: pear
--- ------------------------------------------------------
--- Server version	5.5.5-10.4.24-MariaDB
-use pear;
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+use `pear`;
 
---
--- Dumping data for table `Administrator`
---
+-- Data for SalesTerritory
+INSERT INTO SalesTerritory (Name) VALUES
+('North America'),
+('Europe'),
+('Asia');
 
-LOCK TABLES `Administrator` WRITE;
-/*!40000 ALTER TABLE `Administrator` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Administrator` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Data for Country
+INSERT INTO Country (Name, Code, SalesTerritory_SalesTerritoryKey) VALUES
+('USA', 'US', 1),
+('Canada', 'CA', 1),
+('UK', 'GB', 2),
+('Germany', 'DE', 2),
+('Japan', 'JP', 3),
+('China', 'CN', 3);
 
---
--- Dumping data for table `Answer`
---
+-- Data for City
+INSERT INTO City (Name, PostalCode, Country_CountryKey) VALUES
+('New York', '10001', 1),
+('Los Angeles', '90001', 1),
+('Toronto', 'M5A0A1', 2),
+('London', 'SW1A0AA', 3),
+('Berlin', '10115', 4),
+('Tokyo', '100-0001', 5),
+('Beijing', '100000', 6);
 
-LOCK TABLES `Answer` WRITE;
-/*!40000 ALTER TABLE `Answer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Answer` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Data for Customer
+INSERT INTO Customer (Email, Password, FirstName, LastName, PhoneNumber, Birthday, Address, CreationDate, ModificationTime, Country_CountryKey) VALUES
+('john.doe@example.com', 'password123', 'John', 'Doe', '555-1234', '1990-05-15', '123 Main St', '2024-01-01', CURRENT_TIMESTAMP, 1),
+('jane.smith@example.com', 'securepass', 'Jane', 'Smith', '555-5678', '1985-10-20', '456 Elm St', '2024-01-01', CURRENT_TIMESTAMP, 2),
+('peter.jones@example.com', 'complexpass', 'Peter', 'Jones', '555-9012', '1992-03-10', '789 Oak St', '2024-01-01', CURRENT_TIMESTAMP, 3);
 
---
--- Dumping data for table `City`
---
+-- Data for Administrator
+INSERT INTO Administrator (Name, PhoneNumber, City_CityKey) VALUES
+('Alice Johnson', '555-3456', 1),
+('Bob Williams', '555-7890', 2);
 
-LOCK TABLES `City` WRITE;
-/*!40000 ALTER TABLE `City` DISABLE KEYS */;
-INSERT INTO `City` VALUES (1,'Lublin','20-xxx',7),(3,'Warsaw','30-xxx',7),(4,'Dublin','22-xxx',7),(5,'Kiiv','38-xxx',8),(6,'Mykolaiv','55-xxx',8),(7,'Mykolaiv','67-xxx',8),(8,'Minsk','69-xxx',9),(9,'Niamey','66-xxx',2);
-/*!40000 ALTER TABLE `City` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Data for Product
+INSERT INTO Product (Code, Name, Price, Status, Category) VALUES
+('P1001', 'Smartphone X', 999.99, 'live', 'phone'),
+('L2002', 'Laptop Pro', 1499.99, 'live', 'laptop'),
+('W3003', 'Smartwatch Z', 299.99, 'out_of_stock', 'watch');
 
---
--- Dumping data for table `Country`
---
+-- Data for Question
+INSERT INTO Question (Title, Body, Customer_CustomerKey, Product_ProductKey) VALUES
+('Battery Life', 'How long does the battery last?', 1, 1),
+('Screen Size', 'What is the screen size of the laptop?', 2, 2);
 
-LOCK TABLES `Country` WRITE;
-/*!40000 ALTER TABLE `Country` DISABLE KEYS */;
-INSERT INTO `Country` VALUES (1,'Madagascar','606',1),(2,'Niger','66',1),(3,'Sudan','6',1),(4,'Livan','3',1),(6,'Baklażan','7',1),(7,'Poland','48',2),(8,'Ukraine','38',2),(9,'Belarus','29',2),(10,'Belgium','27',2),(11,'Niemczehia','34',2);
-/*!40000 ALTER TABLE `Country` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Data for SalesPoint
+INSERT INTO SalesPoint (Address, ContactNumber, City_CityKey) VALUES
+('10 Downing St', '555-1111', 4),
+('20 Unter den Linden', '555-2222', 5);
 
---
--- Dumping data for table `Customer`
---
+-- Data for Employee
+INSERT INTO Employee (FirstName, LastName, Email, PhoneNumber, SalesPoint_SalesPointKey) VALUES
+('Eve Brown', 'Brown', 'eve.brown@example.com', '555-4444', 1),
+('Charlie Green', 'Green', 'charlie.green@example.com', '555-5555', 2);
 
-LOCK TABLES `Customer` WRITE;
-/*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (1,'C.CUSTOMER1@GMAIL.COM','Aaaaa123@','Anna','Nzsa','+38523454323','2001-02-14','Lipowa 32','2025-03-17','2025-03-17 12:51:45',3),(3,'c2.Customer2@gmail.com','Maaa234%','Katarzyna','Opona','+48564765456','1999-08-23','Ducha 12','2025-03-17','2025-03-17 12:53:31',1);
-/*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Data for Answer
+INSERT INTO Answer (Body, Question_QuestionKey, Employee_EmployeeKey) VALUES
+('Battery lasts for 10 hours.', 1, 1),
+('Screen size is 15 inches.', 2, 2);
 
---
--- Dumping data for table `Employee`
---
+-- Data for Order
+INSERT INTO `Order` (OrderTime, DeliveryDate, DeliveryCost, OrderStatus, SalesPoint_SalesPointKey, Customer_CustomerKey) VALUES
+('2024-01-05 10:00:00', '2024-01-10 10:00:00', 10.00, 'done', 1, 1),
+('2024-01-06 12:00:00', '2024-01-11 12:00:00', 15.00, 'pending', 2, 2);
 
-LOCK TABLES `Employee` WRITE;
-/*!40000 ALTER TABLE `Employee` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Employee` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Data for OrderDetail
+INSERT INTO OrderDetail (Quantity, TransactionPrice, DiscountPercentage, Order_OrderKey, Product_ProductKey) VALUES
+(1, 999.99, 0, 1, 1),
+(1, 1499.99, 10, 2, 2);
 
---
--- Dumping data for table `Order`
---
 
-LOCK TABLES `Order` WRITE;
-/*!40000 ALTER TABLE `Order` DISABLE KEYS */;
-INSERT INTO `Order` VALUES (1,'2025-03-17 14:30:00','2025-03-21 16:30:20',12.00,'waiting',1,NULL),(2,'2025-03-17 14:30:00','2025-03-21 16:30:20',12.00,'waiting',1,NULL),(3,'2025-03-17 14:30:00','2025-03-17 14:30:00',2.00,'pending',3,1);
-/*!40000 ALTER TABLE `Order` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Dumping data for table `OrderDetail`
---
 
-LOCK TABLES `OrderDetail` WRITE;
-/*!40000 ALTER TABLE `OrderDetail` DISABLE KEYS */;
-/*!40000 ALTER TABLE `OrderDetail` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Additional Data for Order and OrderDetail (20 entries)
+INSERT INTO `Order` (OrderTime, DeliveryDate, DeliveryCost, OrderStatus, SalesPoint_SalesPointKey, Customer_CustomerKey) VALUES
+('2024-01-07 14:00:00', '2024-01-12 14:00:00', 12.50, 'waiting', 1, 3),
+('2024-01-08 09:00:00', '2024-01-13 09:00:00', 8.00, 'done', 2, 1),
+('2024-01-09 18:00:00', '2024-01-14 18:00:00', 11.25, 'pending', 1, 2),
+('2024-01-10 11:00:00', '2024-01-15 11:00:00', 9.50, 'done', 2, 3),
+('2024-01-11 16:00:00', '2024-01-16 16:00:00', 14.00, 'cancelled', 1, 1),
+('2024-01-12 20:00:00', '2024-01-17 20:00:00', 7.75, 'refunded', 2, 2),
+('2024-01-13 08:00:00', '2024-01-18 08:00:00', 13.50, 'waiting', 1, 3),
+('2024-01-14 13:00:00', '2024-01-19 13:00:00', 10.25, 'done', 2, 1),
+('2024-01-15 19:00:00', '2024-01-20 19:00:00', 8.75, 'pending', 1, 2),
+('2024-01-16 10:00:00', '2024-01-21 10:00:00', 12.00, 'done', 2, 3),
+('2024-01-17 15:00:00', '2024-01-22 15:00:00', 9.25, 'cancelled', 1, 1),
+('2024-01-18 21:00:00', '2024-01-23 21:00:00', 11.75, 'refunded', 2, 2),
+('2024-01-19 07:00:00', '2024-01-24 07:00:00', 14.50, 'waiting', 1, 3),
+('2024-01-20 12:00:00', '2024-01-25 12:00:00', 7.50, 'done', 2, 1),
+('2024-01-21 17:00:00', '2024-01-26 17:00:00', 10.75, 'pending', 1, 2),
+('2024-01-22 09:00:00', '2024-01-27 09:00:00', 13.00, 'done', 2, 3),
+('2024-01-23 14:00:00', '2024-01-28 14:00:00', 8.25, 'cancelled', 1, 1),
+('2024-01-24 22:00:00', '2024-01-29 22:00:00', 11.50, 'refunded', 2, 2),
+('2024-01-25 06:00:00', '2024-01-30 06:00:00', 9.75, 'waiting', 1, 3),
+('2024-01-26 11:00:00', '2024-01-31 11:00:00', 12.25, 'done', 2, 1);
 
---
--- Dumping data for table `Product`
---
+INSERT INTO OrderDetail (Quantity, TransactionPrice, DiscountPercentage, Order_OrderKey, Product_ProductKey) VALUES
+(2, 299.99, 5, 3, 3),
+(1, 999.99, 0, 4, 1),
+(3, 299.99, 10, 5, 3),
+(1, 1499.99, 5, 6, 2),
+(2, 999.99, 0, 7, 1),
+(1, 299.99, 15, 8, 3),
+(3, 1499.99, 10, 9, 2),
+(1, 999.99, 5, 10, 1),
+(2, 299.99, 0, 11, 3),
+(1, 1499.99, 20, 12, 2),
+(3, 999.99, 10, 13, 1),
+(1, 299.99, 5, 14, 3),
+(2, 1499.99, 0, 15, 2),
+(1, 999.99, 15, 16, 1),
+(3, 299.99, 10, 17, 3),
+(1, 1499.99, 0, 18, 2),
+(2, 999.99, 5, 19, 1),
+(1, 299.99, 20, 20, 3),
+(3, 1499.99, 10, 21, 2),
+(1, 999.99, 0, 22, 1);
 
-LOCK TABLES `Product` WRITE;
-/*!40000 ALTER TABLE `Product` DISABLE KEYS */;
-INSERT INTO `Product` VALUES (1,'109525','yPhone',10000.00,'planned','phone'),(3,'109524','yPhone 15',9999.00,'planned','phone'),(4,'109523','yPhone 13 SE',9969.00,'archived','phone'),(6,'109513','yPhone 12',968.69,'planned','phone'),(7,'135732','ophone12',1300.00,'planned','phone'),(8,'888234','olaptop3',3000.00,'archived','laptop'),(9,'343356','owatch',720.00,'planned','watch');
-/*!40000 ALTER TABLE `Product` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Additional Data for Customer (10 entries)
+INSERT INTO Customer (Email, Password, FirstName, LastName, PhoneNumber, Birthday, Address, CreationDate, ModificationTime, Country_CountryKey) VALUES
+('sarah.lee@example.com', 'strongpass', 'Sarah', 'Lee', '555-2345', '1988-07-22', '234 Pine St', '2024-01-02', CURRENT_TIMESTAMP, 4),
+('david.chen@example.com', 'password789', 'David', 'Chen', '555-6789', '1995-12-01', '567 Maple Ave', '2024-01-02', CURRENT_TIMESTAMP, 5),
+('linda.brown@example.com', 'secure123', 'Linda', 'Brown', '555-0123', '1993-04-18', '890 Oak Ln', '2024-01-03', CURRENT_TIMESTAMP, 6),
+('michael.davis@example.com', 'pass1234', 'Michael', 'Davis', '555-3456', '1991-09-05', '345 Cedar Rd', '2024-01-03', CURRENT_TIMESTAMP, 1),
+('jennifer.wilson@example.com', 'mypassword', 'Jennifer', 'Wilson', '555-7890', '1987-02-14', '678 Birch St', '2024-01-04', CURRENT_TIMESTAMP, 2),
+('robert.garcia@example.com', 'mysecurepass', 'Robert', 'Garcia', '555-2345', '1994-06-30', '901 Pine Ave', '2024-01-04', CURRENT_TIMESTAMP, 3),
+('maria.rodriguez@example.com', 'password567', 'Maria', 'Rodriguez', '555-6789', '1989-11-08', '234 Maple Ln', '2024-01-05', CURRENT_TIMESTAMP, 4),
+('james.martinez@example.com', 'securepass123', 'James', 'Martinez', '555-0123', '1996-03-25', '567 Oak Rd', '2024-01-05', CURRENT_TIMESTAMP, 5),
+('amy.anderson@example.com', 'mypass123', 'Amy', 'Anderson', '555-3456', '1992-08-12', '890 Cedar Ave', '2024-01-06', CURRENT_TIMESTAMP, 6),
+('thomas.jackson@example.com', 'securepwd', 'Thomas', 'Jackson', '555-7890', '1986-01-01', '345 Birch Ln', '2024-01-06', CURRENT_TIMESTAMP, 1);
 
---
--- Dumping data for table `Question`
---
+-- Additional Data for SalesPoint (5 entries)
+INSERT INTO SalesPoint (Address, ContactNumber, ModificationTime, City_CityKey) VALUES
+('789 Cherry Ave', '555-5555', CURRENT_TIMESTAMP, 3),
+('456 Walnut St', '555-6666', CURRENT_TIMESTAMP, 5),
+('123 Elm St', '555-7777', CURRENT_TIMESTAMP, 1),
+('901 Oak Ave', '555-8888', CURRENT_TIMESTAMP, 2),
+('345 Pine Ln', '555-9999', CURRENT_TIMESTAMP, 4);
 
-LOCK TABLES `Question` WRITE;
-/*!40000 ALTER TABLE `Question` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Question` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Additional Data for Employee (12 entries)
+INSERT INTO Employee (FirstName, LastName, Email, PhoneNumber, SalesPoint_SalesPointKey) VALUES
+('Grace', 'Lee', 'grace.lee@example.com', '555-1212', 3),
+('Henry', 'Kim', 'henry.kim@example.com', '555-1313', 4),
+('Isabella', 'Davis', 'isabella.davis@example.com', '555-1414', 5),
+('Jack', 'Wilson', 'jack.wilson@example.com', '555-1515', 1),
+('Kate', 'Garcia', 'kate.garcia@example.com', '555-1616', 2),
+('Liam', 'Rodriguez', 'liam.rodriguez@example.com', '555-1717', 3),
+('Mia', 'Martinez', 'mia.martinez@example.com', '555-1818', 4),
+('Noah', 'Anderson', 'noah.anderson@example.com', '555-1919', 5),
+('Olivia', 'Thomas', 'olivia.thomas@example.com', '555-2020', 1),
+('Peter', 'Hall', 'peter.hall@example.com', '555-2121', 2),
+('Quinn', 'Clark', 'quinn.clark@example.com', '555-2222', 3),
+('Rachel', 'Lewis', 'rachel.lewis@example.com', '555-2323', 4);
 
---
--- Dumping data for table `SalesPoint`
---
-
-LOCK TABLES `SalesPoint` WRITE;
-/*!40000 ALTER TABLE `SalesPoint` DISABLE KEYS */;
-INSERT INTO `SalesPoint` VALUES (1,'Nadbystrzycka 23/1','+48451264901','2025-03-17 08:51:00',9),(2,'Lite 79','+66451264901','2025-03-17 08:51:57',9),(3,'Lipowa 43','+48669345567}','2025-03-17 12:35:59',1),(4,'Pils 76','+38543234578','2025-03-17 12:38:24',5),(5,'Tocza 21/2','+55544321456','2025-03-17 12:40:03',6);
-/*!40000 ALTER TABLE `SalesPoint` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `SalesTerritory`
---
-
-LOCK TABLES `SalesTerritory` WRITE;
-/*!40000 ALTER TABLE `SalesTerritory` DISABLE KEYS */;
-INSERT INTO `SalesTerritory` VALUES (1,'Africa'),(2,'Europe');
-/*!40000 ALTER TABLE `SalesTerritory` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2025-03-17 13:08:33
+-- Additional Data for Product (20 entries)
+INSERT INTO Product (Code, Name, Price, Status, Category) VALUES
+('P1004', 'Smartphone Y', 1099.99, 'live', 'phone'),
+('L2005', 'Laptop Air', 1299.99, 'live', 'laptop'),
+('W3006', 'Smartwatch X', 349.99, 'out_of_stock', 'watch'),
+('P1007', 'Smartphone Z', 1199.99, 'live', 'phone'),
+('L2008', 'Laptop Basic', 999.99, 'live', 'laptop'),
+('W3009', 'Smartwatch Pro', 449.99, 'live', 'watch'),
+('P1010', 'Smartphone A', 899.99, 'live', 'phone'),
+('L2011', 'Laptop Gamer', 1799.99, 'live', 'laptop'),
+('W3012', 'Smartwatch Lite', 199.99, 'out_of_stock', 'watch'),
+('P1013', 'Smartphone B', 949.99, 'live', 'phone'),
+('L2014', 'Laptop Office', 1199.99, 'live', 'laptop'),
+('W3015', 'Smartwatch Plus', 399.99, 'live', 'watch'),
+('P1016', 'Smartphone C', 1249.99, 'live', 'phone'),
+('L2017', 'Laptop Studio', 1599.99, 'live', 'laptop'),
+('W3018', 'Smartwatch Active', 249.99, 'out_of_stock', 'watch'),
+('P1019', 'Smartphone D', 799.99, 'live', 'phone'),
+('L2020', 'Laptop Travel', 1099.99, 'live', 'laptop'),
+('W3021', 'Smartwatch Fashion', 299.99, 'live', 'watch'),
+('P1022', 'Smartphone E', 1349.99, 'live', 'phone'),
+('L2023', 'Laptop Power', 1899.99, 'live', 'laptop');

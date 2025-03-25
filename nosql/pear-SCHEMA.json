@@ -1,0 +1,34 @@
+{
+    "customer": {
+        "firstName": "",
+        "lastName": "",
+        "email": ""
+    },
+    "salesPoint": {
+        "address": "",
+        "contactNumbers": [],
+        "modificationTime": "?",
+        "employees": {
+            "firstName": "",
+            "lastName": "",
+            "email": "",
+            "employmentYears": 0
+        }
+    },
+    "product": {
+        "code": "?",
+        "name": "",
+        "price": 0.01,
+        "status": "?",
+        "category": "?",
+        "questions": {
+            "?": ""
+        }
+    },
+    "order": {
+        "?": "",
+        "details": {
+            "?": ""
+        }
+    }
+}

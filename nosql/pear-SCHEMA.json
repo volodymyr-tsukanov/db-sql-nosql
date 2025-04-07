@@ -1,34 +1,88 @@
 {
-    "customer": {
-        "firstName": "",
-        "lastName": "",
-        "email": ""
-    },
-    "salesPoint": {
-        "address": "",
-        "contactNumbers": [],
-        "modificationTime": "?",
-        "employees": {
-            "firstName": "",
-            "lastName": "",
-            "email": "",
-            "employmentYears": 0
-        }
-    },
-    "product": {
-        "code": "?",
-        "name": "",
-        "price": 0.01,
-        "status": "?",
-        "category": "?",
-        "questions": {
-            "?": ""
-        }
-    },
-    "order": {
-        "?": "",
-        "details": {
-            "?": ""
-        }
+  "_id": {
+    "$oid": "67f3a8426492e4991b7fb643"
+  },
+  "customer": {
+    "customerKey": 1,
+    "firstName": "Jan",
+    "lastName": "Kowalski",
+    "email": "jan.kowalski@example.com",
+    "phoneNumber": "+48123456789",
+    "birthday": "1990-01-01",
+    "address": "Kwiatowa 15",
+    "creationDate": "2024-03-01",
+    "modificationTime": "2025-03-24T10:38:00Z",
+    "country": {
+      "countryKey": 7,
+      "name": "Poland",
+      "code": "48"
     }
+  },
+  "salesPoint": {
+    "salesPointKey": 2,
+    "address": "Handlowa 1",
+    "contactNumbers": [
+      "+48123456789"
+    ],
+    "modificationTime": "2025-03-24T10:38:00Z",
+    "city": {
+      "cityKey": 3,
+      "name": "Warsaw",
+      "postalCode": "30-001"
+    },
+    "employees": [
+      {
+        "employeeKey": 1,
+        "firstName": "Anna",
+        "lastName": "Nowak",
+        "email": "anna.nowak@example.com",
+        "phoneNumber": "+48987654321",
+        "SalesPoint_SalesPointKey": 1
+      }
+    ]
+  },
+  "product": {
+    "productKey": 1,
+    "code": "123456",
+    "name": "yPhone",
+    "price": 3999.99,
+    "status": "planned",
+    "category": "phone",
+    "questions": [
+      {
+        "questionKey": 1,
+        "title": "Czy działa z eSIM?",
+        "body": "Czy ten model obsługuje eSIM?",
+        "creationTime": "2025-04-01T12:00:00Z",
+        "answers": [
+          {
+            "answerKey": 1,
+            "body": "Tak, obsługuje.",
+            "employee": {
+              "employeeKey": 1,
+              "firstName": "Anna",
+              "lastName": "Nowak"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "order": {
+    "orderKey": 1,
+    "orderTime": "2025-04-06T15:30:00Z",
+    "deliveryDate": "2025-04-10T12:00:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "orderDetailKey": 1,
+        "productCode": "123432",
+        "productName": "yPhone",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  }
 }

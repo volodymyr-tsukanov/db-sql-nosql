@@ -1,0 +1,317 @@
+db.orders.insertMany([
+  {
+    "orderTime": "2025-04-06T15:30:00Z",
+    "deliveryDate": "2025-04-10T12:00:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123432",
+        "productName": "yPhone",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2025-04-06T15:31:00Z",
+    "deliveryDate": "2025-04-10T12:01:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123433",
+        "productName": "yPhone 2",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2025-04-06T15:32:00Z",
+    "deliveryDate": "2025-04-10T12:02:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123434",
+        "productName": "yPhone 3",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2025-04-06T15:33:00Z",
+    "deliveryDate": "2025-04-10T12:03:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123435",
+        "productName": "yPhone 4",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2025-04-06T15:34:00Z",
+    "deliveryDate": "2025-04-10T12:04:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123436",
+        "productName": "yPhone 5",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2025-04-06T15:35:00Z",
+    "deliveryDate": "2025-04-10T12:05:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123437",
+        "productName": "yPhone 6",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2025-04-06T15:36:00Z",
+    "deliveryDate": "2025-04-10T12:06:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123438",
+        "productName": "yPhone 7",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2025-04-06T15:37:00Z",
+    "deliveryDate": "2025-04-10T12:07:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123439",
+        "productName": "yPhone 8",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "2026-01-12T10:00:00Z",
+    "deliveryDate": "2026-01-16T14:30:00Z",
+    "deliveryCost": 19,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123443",
+        "productName": "yPhone",
+        "quantity": 3,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 7
+      }
+    ]
+  },
+  {
+    "orderTime": "2026-02-05T13:30:00Z",
+    "deliveryDate": "2026-02-09T10:00:00Z",
+    "deliveryCost": 22,
+    "orderStatus": "shipped",
+    "details": [
+      {
+        "productCode": "123444",
+        "productName": "yTablet",
+        "quantity": 2,
+        "transactionPrice": 1599.99,
+        "discountPercentage": 10
+      }
+    ]
+  },
+  {
+    "orderTime": "2026-03-22T09:15:00Z",
+    "deliveryDate": "2026-03-26T13:45:00Z",
+    "deliveryCost": 21,
+    "orderStatus": "delivered",
+    "details": [
+      {
+        "productCode": "123445",
+        "productName": "yWatch",
+        "quantity": 1,
+        "transactionPrice": 499.99,
+        "discountPercentage": 12
+      }
+    ]
+  },
+  {
+    "orderTime": "2026-04-04T17:45:00Z",
+    "deliveryDate": "2026-04-08T12:00:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123446",
+        "productName": "yLaptop",
+        "quantity": 1,
+        "transactionPrice": 2299.99,
+        "discountPercentage": 8
+      }
+    ]
+  },
+  {
+    "orderTime": "2026-05-15T08:00:00Z",
+    "deliveryDate": "2026-05-19T11:30:00Z",
+    "deliveryCost": 25,
+    "orderStatus": "shipped",
+    "details": [
+      {
+        "productCode": "123447",
+        "productName": "yPhone",
+        "quantity": 5,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 6
+      }
+    ]
+  },
+  {
+    "orderTime": "1999-06-12T10:30:00Z",
+    "deliveryDate": "1999-06-16T14:00:00Z",
+    "deliveryCost": 15,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123448",
+        "productName": "yPhone",
+        "quantity": 2,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 5
+      }
+    ]
+  },
+  {
+    "orderTime": "1999-07-22T13:00:00Z",
+    "deliveryDate": "1999-07-26T17:30:00Z",
+    "deliveryCost": 18,
+    "orderStatus": "shipped",
+    "details": [
+      {
+        "productCode": "123449",
+        "productName": "yTablet",
+        "quantity": 1,
+        "transactionPrice": 1599.99,
+        "discountPercentage": 10
+      }
+    ]
+  },
+  {
+    "orderTime": "1999-08-09T09:15:00Z",
+    "deliveryDate": "1999-08-13T12:45:00Z",
+    "deliveryCost": 20,
+    "orderStatus": "delivered",
+    "details": [
+      {
+        "productCode": "123450",
+        "productName": "yWatch",
+        "quantity": 3,
+        "transactionPrice": 499.99,
+        "discountPercentage": 12
+      }
+    ]
+  },
+  {
+    "orderTime": "1999-09-15T16:30:00Z",
+    "deliveryDate": "1999-09-19T13:00:00Z",
+    "deliveryCost": 22,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123451",
+        "productName": "yLaptop",
+        "quantity": 2,
+        "transactionPrice": 2299.99,
+        "discountPercentage": 8
+      }
+    ]
+  },
+  {
+    "orderTime": "1999-10-03T11:00:00Z",
+    "deliveryDate": "1999-10-07T15:30:00Z",
+    "deliveryCost": 17,
+    "orderStatus": "shipped",
+    "details": [
+      {
+        "productCode": "123452",
+        "productName": "yPhone",
+        "quantity": 1,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 6
+      }
+    ]
+  },
+  {
+    "orderTime": "3019-02-21T10:00:00Z",
+    "deliveryDate": "3019-02-25T14:30:00Z",
+    "deliveryCost": 30,
+    "orderStatus": "pending",
+    "details": [
+      {
+        "productCode": "123453",
+        "productName": "yPhone",
+        "quantity": 4,
+        "transactionPrice": 3799.99,
+        "discountPercentage": 10
+      }
+    ]
+  },
+  {
+    "orderTime": "3019-06-12T15:30:00Z",
+    "deliveryDate": "3019-06-16T12:00:00Z",
+    "deliveryCost": 28,
+    "orderStatus": "shipped",
+    "details": [
+      {
+        "productCode": "123454",
+        "productName": "yTablet",
+        "quantity": 2,
+        "transactionPrice": 1599.99,
+        "discountPercentage": 12
+      }
+    ]
+  },
+  {
+    "orderTime": "3019-11-03T09:00:00Z",
+    "deliveryDate": "3019-11-07T16:00:00Z",
+    "deliveryCost": 35,
+    "orderStatus": "delivered",
+    "details": [
+      {
+        "productCode": "123455",
+        "productName": "yLaptop",
+        "quantity": 1,
+        "transactionPrice": 2299.99,
+        "discountPercentage": 8
+      }
+    ]
+  }
+]);

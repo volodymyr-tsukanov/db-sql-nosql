@@ -1,0 +1,500 @@
+[{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc20"
+  },
+  "customerKey": 1,
+  "firstName": "Jan",
+  "lastName": "Kowalski",
+  "email": "jan.kowalski@example.com",
+  "phoneNumber": "+48123456789",
+  "birthday": {
+    "$date": "1990-01-01T00:00:00.000Z"
+  },
+  "address": "Kwiatowa 15",
+  "creationDate": {
+    "$date": "2024-03-01T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-24T10:38:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc21"
+  },
+  "customerKey": 2,
+  "firstName": "Anna",
+  "lastName": "Nowak",
+  "email": "anna.nowak@example.com",
+  "phoneNumber": "+48111222333",
+  "birthday": {
+    "$date": "1985-05-15T00:00:00.000Z"
+  },
+  "address": "Leśna 7",
+  "creationDate": {
+    "$date": "2024-03-02T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-20T14:25:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc22"
+  },
+  "customerKey": 3,
+  "firstName": "Piotr",
+  "lastName": "Nowakowski",
+  "email": "piotr.nowakowski@example.com",
+  "phoneNumber": "+48123456780",
+  "birthday": {
+    "$date": "1988-07-07T00:00:00.000Z"
+  },
+  "address": "Zielona 22",
+  "creationDate": {
+    "$date": "2024-03-10T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-19T13:45:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc23"
+  },
+  "customerKey": 4,
+  "firstName": "Marta",
+  "lastName": "Wójcik",
+  "email": "marta.wojcik@example.com",
+  "phoneNumber": "+48123456781",
+  "birthday": {
+    "$date": "1992-02-25T00:00:00.000Z"
+  },
+  "address": "Słoneczna 9",
+  "creationDate": {
+    "$date": "2024-03-15T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-18T09:32:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc24"
+  },
+  "customerKey": 5,
+  "firstName": "Kamil",
+  "lastName": "Bąk",
+  "email": "kamil.bak@example.com",
+  "phoneNumber": "+48123456782",
+  "birthday": {
+    "$date": "1982-03-03T00:00:00.000Z"
+  },
+  "address": "Wiosenna 34",
+  "creationDate": {
+    "$date": "2024-03-20T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-17T16:22:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc25"
+  },
+  "customerKey": 6,
+  "firstName": "Zofia",
+  "lastName": "Kaczmarek",
+  "email": "zofia.kaczmarek@example.com",
+  "phoneNumber": "+48123456783",
+  "birthday": {
+    "$date": "1995-06-10T00:00:00.000Z"
+  },
+  "address": "Lasowa 5",
+  "creationDate": {
+    "$date": "2024-03-22T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-16T15:12:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc26"
+  },
+  "customerKey": 7,
+  "firstName": "Agnieszka",
+  "lastName": "Laskowska",
+  "email": "agnieszka.laskowska@example.com",
+  "phoneNumber": "+48123456784",
+  "birthday": {
+    "$date": "1993-08-18T00:00:00.000Z"
+  },
+  "address": "Leśna 13",
+  "creationDate": {
+    "$date": "2024-03-25T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-14T14:00:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc27"
+  },
+  "customerKey": 8,
+  "firstName": "Tomasz",
+  "lastName": "Makowski",
+  "email": "tomasz.makowski@example.com",
+  "phoneNumber": "+48123456785",
+  "birthday": {
+    "$date": "1984-11-12T00:00:00.000Z"
+  },
+  "address": "Różana 2",
+  "creationDate": {
+    "$date": "2024-03-28T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-13T13:50:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc28"
+  },
+  "customerKey": 9,
+  "firstName": "Katarzyna",
+  "lastName": "Biel",
+  "email": "katarzyna.biel@example.com",
+  "phoneNumber": "+48123456786",
+  "birthday": {
+    "$date": "1991-04-02T00:00:00.000Z"
+  },
+  "address": "Chabrowa 10",
+  "creationDate": {
+    "$date": "2024-03-30T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-12T10:20:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce54e49ccf226f8f3bc29"
+  },
+  "customerKey": 10,
+  "firstName": "Marcin",
+  "lastName": "Zawisza",
+  "email": "marcin.zawisza@example.com",
+  "phoneNumber": "+48123456787",
+  "birthday": {
+    "$date": "1987-12-12T00:00:00.000Z"
+  },
+  "address": "Tulipanowa 8",
+  "creationDate": {
+    "$date": "2024-03-31T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-11T08:44:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc2a"
+  },
+  "customerKey": 1,
+  "firstName": "Jan",
+  "lastName": "Kowalski",
+  "email": "jan.kowalski@example.com",
+  "phoneNumber": "+48123456789",
+  "birthday": {
+    "$date": "1990-01-01T00:00:00.000Z"
+  },
+  "address": "Kwiatowa 15",
+  "creationDate": {
+    "$date": "2024-03-01T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-24T10:38:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc2b"
+  },
+  "customerKey": 2,
+  "firstName": "Anna",
+  "lastName": "Nowak",
+  "email": "anna.nowak@example.com",
+  "phoneNumber": "+48111222333",
+  "birthday": {
+    "$date": "1985-05-15T00:00:00.000Z"
+  },
+  "address": "Leśna 7",
+  "creationDate": {
+    "$date": "2024-03-02T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-20T14:25:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc2c"
+  },
+  "customerKey": 3,
+  "firstName": "Piotr",
+  "lastName": "Nowakowski",
+  "email": "piotr.nowakowski@example.com",
+  "phoneNumber": "+48123456780",
+  "birthday": {
+    "$date": "1988-07-07T00:00:00.000Z"
+  },
+  "address": "Zielona 22",
+  "creationDate": {
+    "$date": "2024-03-10T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-19T13:45:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc2d"
+  },
+  "customerKey": 4,
+  "firstName": "Marta",
+  "lastName": "Wójcik",
+  "email": "marta.wojcik@example.com",
+  "phoneNumber": "+48123456781",
+  "birthday": {
+    "$date": "1992-02-25T00:00:00.000Z"
+  },
+  "address": "Słoneczna 9",
+  "creationDate": {
+    "$date": "2024-03-15T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-18T09:32:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc2e"
+  },
+  "customerKey": 5,
+  "firstName": "Kamil",
+  "lastName": "Bąk",
+  "email": "kamil.bak@example.com",
+  "phoneNumber": "+48123456782",
+  "birthday": {
+    "$date": "1982-03-03T00:00:00.000Z"
+  },
+  "address": "Wiosenna 34",
+  "creationDate": {
+    "$date": "2024-03-20T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-17T16:22:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc2f"
+  },
+  "customerKey": 6,
+  "firstName": "Zofia",
+  "lastName": "Kaczmarek",
+  "email": "zofia.kaczmarek@example.com",
+  "phoneNumber": "+48123456783",
+  "birthday": {
+    "$date": "1995-06-10T00:00:00.000Z"
+  },
+  "address": "Lasowa 5",
+  "creationDate": {
+    "$date": "2024-03-22T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-16T15:12:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc30"
+  },
+  "customerKey": 7,
+  "firstName": "Agnieszka",
+  "lastName": "Laskowska",
+  "email": "agnieszka.laskowska@example.com",
+  "phoneNumber": "+48123456784",
+  "birthday": {
+    "$date": "1993-08-18T00:00:00.000Z"
+  },
+  "address": "Leśna 13",
+  "creationDate": {
+    "$date": "2024-03-25T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-14T14:00:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc31"
+  },
+  "customerKey": 8,
+  "firstName": "Tomasz",
+  "lastName": "Makowski",
+  "email": "tomasz.makowski@example.com",
+  "phoneNumber": "+48123456785",
+  "birthday": {
+    "$date": "1984-11-12T00:00:00.000Z"
+  },
+  "address": "Różana 2",
+  "creationDate": {
+    "$date": "2024-03-28T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-13T13:50:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc32"
+  },
+  "customerKey": 9,
+  "firstName": "Katarzyna",
+  "lastName": "Biel",
+  "email": "katarzyna.biel@example.com",
+  "phoneNumber": "+48123456786",
+  "birthday": {
+    "$date": "1991-04-02T00:00:00.000Z"
+  },
+  "address": "Chabrowa 10",
+  "creationDate": {
+    "$date": "2024-03-30T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-12T10:20:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+},
+{
+  "_id": {
+    "$oid": "67fce58549ccf226f8f3bc33"
+  },
+  "customerKey": 10,
+  "firstName": "Marcin",
+  "lastName": "Zawisza",
+  "email": "marcin.zawisza@example.com",
+  "phoneNumber": "+48123456787",
+  "birthday": {
+    "$date": "1987-12-12T00:00:00.000Z"
+  },
+  "address": "Tulipanowa 8",
+  "creationDate": {
+    "$date": "2024-03-31T00:00:00.000Z"
+  },
+  "modificationTime": {
+    "$date": "2025-03-11T08:44:00.000Z"
+  },
+  "country": {
+    "countryKey": 7,
+    "name": "Poland",
+    "code": "48"
+  }
+}]

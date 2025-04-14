@@ -1,0 +1,157 @@
+{
+  "_id": ObjectId,
+  "firstName": {
+    "type": String,
+    "required": true,
+    "minLength": 1,
+    "maxLength": 50
+  },
+  "lastName": {
+    "type": String,
+    "required": true,
+    "minLength": 1,
+    "maxLength": 50
+  },
+  "email": {
+    "type": String,
+    "required": true,
+    "unique": true,
+    "pattern": /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  },
+  "phoneNumber": {
+    "type": String,
+    "required": true,
+    "minLength": 1,
+    "maxLength": 20
+  },
+  "birthday": {
+    "type": Date,
+    "required": true
+  },
+  "countryId": {
+    "type": ObjectId,
+    "required": true,
+    "ref": "countries"
+  },
+  "address": {
+    "type": String,
+    "required": true,
+    "minLength": 1,
+    "maxLength": 100
+  },
+  "creationDate": {
+    "type": Date,
+    "default": Date.now
+  },
+  "modificationTime": {
+    "type": Date,
+    "default": Date.now
+  }
+}
+
+db.customers.createIndex({ email: 1 }, { unique: true })
+
+
+
+
+
+{
+  "_id": ObjectId,
+  "cityId": {
+    "type": ObjectId,
+    "required": true,
+    "ref": "cities"
+  },
+  "address": {
+    "type": String,
+    "required": true,
+    "minLength": 1,
+    "maxLength": 100
+  },
+  "contactNumbers": {
+    "type": [String],
+    "required": true,
+    "minLength": 1,
+    "maxLength": 20
+  },
+  "modificationTime": {
+    "type": Date,
+    "default": Date.now
+  },
+  "employees": {
+    "type": [
+      {
+        "employeeId": {
+          "type": ObjectId,
+          "required": true,
+          "ref": "employees"
+        }
+      }
+    ]
+  }
+}
+
+db.salesPoints.createIndex({ cityId: 1 })
+
+
+
+
+
+{
+  "_id": ObjectId,
+  "name": {
+    "type": String,
+    "required": true,
+    "minLength": 1,
+    "maxLength": 50
+  },
+  "countries": {
+    "type": [
+      {
+        "countryId": {
+          "type": ObjectId,
+          "required": true,
+          "ref": "countries"
+        },
+        "name": {
+          "type": String,
+          "required": true,
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "code": {
+          "type": String,
+          "required": true,
+          "minLength": 1,
+          "maxLength": 10
+        },
+        "cities": {
+          "type": [
+            {
+              "cityId": {
+                "type": ObjectId,
+                "required": true,
+                "ref": "cities"
+              },
+              "name": {
+                "type": String,
+                "required": true,
+                "minLength": 1,
+                "maxLength": 50
+              },
+              "postalCode": {
+                "type": String,
+                "required": true,
+                "minLength": 1,
+                "maxLength": 10
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+
+db.salesTerritories.createIndex({ "countries.countryId": 1 })
+

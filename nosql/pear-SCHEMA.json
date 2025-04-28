@@ -1,21 +1,21 @@
 {
   "customers": {
-	"_id": ObjectId,
+    "_id": ObjectId,
     "firstName": "Jan",
     "lastName": "Kowalski",
     "email": "jan.kowalski@example.com",
     "phoneNumber": "+48123456789",
     "birthday": "1990-01-01",
-	"countryId": ObjectId,
+    "countryId": ObjectId,
     "address": "Kwiatowa 15",
     "creationDate": "2024-03-01",
-    "modificationTime": "2025-03-24T10:38:00Z",
+    "modificationTime": "2025-03-24T10:38:00Z"
   },
   
   "salesPoints": {
     "_id": ObjectId,
-	"cityId": ObjectId,
-	"address": "Handlowa 1",
+    "cityId": ObjectId,
+    "address": "Handlowa 1",
     "contactNumbers": [
       "+48123456789"
     ],
@@ -28,33 +28,35 @@
   },
   
   "salesTerritories": {
-	"_id": ObjectId,
-	"name": "Africa",
-	"countries": [
-	  {
-	    "countryId": ObjectId,
+    "_id": ObjectId,
+    "name": "Africa",
+    "countries": [
+      {
+        "countryId": ObjectId,
         "name": "Poland",
-        "code": "48"
-	    "cities": [
-		  "cityId": ObjectId,
-		  "name": "Luban",
-		  "postalCode": "66-696"
-		]
-	  }
+        "code": "48",
+        "cities": [
+          {
+            "cityId": ObjectId,
+            "name": "Luban",
+            "postalCode": "66-696"
+          }
+        ]
+      }
     ]
-  }
+  },
   
   "employees": {
-	"_id": ObjectId,
-	"firstName": "Anna",
-	"lastName": "Nowak",
-	"email": "anna.nowak@example.com",
-	"phoneNumber": "+48987654321"
-  }
+    "_id": ObjectId,
+    "firstName": "Anna",
+    "lastName": "Nowak",
+    "email": "anna.nowak@example.com",
+    "phoneNumber": "+48987654321"
+  },
   
   "products": {
     "_id": ObjectId,
-	"code": "123456",
+    "code": "123456",
     "name": "yPhone",
     "price": 3999.99,
     "status": "planned",
@@ -76,11 +78,11 @@
   
   "orders": {
     "_id": ObjectId,
-	"orderTime": "2025-04-06T15:30:00Z",
+    "orderTime": "2025-04-06T15:30:00Z",
     "deliveryDate": "2025-04-10T12:00:00Z",
     "deliveryCost": 20,
     "orderStatus": "pending",
-	"customerId": ObjectId,
+    "customerId": ObjectId,
     "details": [
       {
         "productId": ObjectId,

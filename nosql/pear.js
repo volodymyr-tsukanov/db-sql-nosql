@@ -133,7 +133,7 @@ db.createCollection("products", {
           bsonType: "array",
           items: {
             bsonType: "object",
-            required: ["title", "body", "creationTime", "answers"],
+            required: ["title", "body", "creationTime", "customerId", "answers"],
             properties: {
               title: { bsonType: "string" },
               body: { bsonType: "string" },
@@ -178,9 +178,9 @@ db.createCollection("orders", {
           bsonType: "array",
           items: {
             bsonType: "object",
-            required: ["productId", "quantity", "transactionPrice", "discountPercentage"],
+            required: ["productCode", "quantity", "transactionPrice", "discountPercentage"],
             properties: {
-              productId: { bsonType: "objectId" },
+              productCode: { bsonType: "string" },
               quantity: { bsonType: "int" },
               transactionPrice: { bsonType: "double" },
               discountPercentage: { bsonType: "double" }
@@ -195,7 +195,7 @@ db.createCollection("orders", {
 db.orders.createIndex({ customerId: 1 });
 db.orders.createIndex({ orderTime: 1 });
 db.orders.createIndex({ customerId: 1, orderStatus: 1 });
-db.orders.createIndex({ "details.productId": 1 });
+db.orders.createIndex({ "details.productCode": 1 });
 
 
 
@@ -546,24 +546,56 @@ db.products.insertMany([
     questions: []  // No questions for this product
   },
   {
-    code: "P1003",
-    name: "yWatch Ultra",
-    price: 1899.00,
+    code: "P1005",
+    name: "yCamera Pro",
+    price: 2599.99,
     status: "available",
-    category: "wearable",
+    category: "camera",
     questions: [
       {
-        title: "Czy działa bez telefonu?",
-        body: "Czy można korzystać z zegarka niezależnie?",
-        creationTime: new Date("2025-04-03T10:15:00Z"),
-        customerId: PIOTR_ID,  // <-- Added customerId reference
+        title: "Czy ma stabilizację obrazu?",
+        body: "Interesuje mnie jakość wideo podczas ruchu.",
+        creationTime: new Date("2025-04-08T10:00:00Z"),
+        customerId: MAREK_ID,
         answers: [
           {
-            body: "Tak, ma własną kartę eSIM.",
-            employeeId: EMP3_ID
-          },
+            body: "Tak, posiada optyczną stabilizację obrazu.",
+            employeeId: EMP1_ID
+          }
+        ]
+      },
+      {
+        title: "Czy można nagrywać w 4K?",
+        body: "Czy kamera wspiera 4K przy 60 fps?",
+        creationTime: new Date("2025-04-09T12:30:00Z"),
+        customerId: JOANNA_ID,
+        answers: [
           {
-            body: "Można odbierać połączenia i SMS.",
+            body: "Tak, obsługuje 4K przy 60 fps.",
+            employeeId: EMP2_ID
+          }
+        ]
+      },
+      {
+        title: "Czy jest wodoodporna?",
+        body: "Chciałbym używać jej podczas nurkowania.",
+        creationTime: new Date("2025-04-10T15:45:00Z"),
+        customerId: PAWEL_ID,
+        answers: [
+          {
+            body: "Tak, do 10 metrów bez obudowy.",
+            employeeId: EMP3_ID
+          }
+        ]
+      },
+      {
+        title: "Czy ma wymienną baterię?",
+        body: "Planuję długie nagrania i chciałbym wymieniać baterię.",
+        creationTime: new Date("2025-04-11T09:20:00Z"),
+        customerId: ANNA_ID,
+        answers: [
+          {
+            body: "Tak, bateria jest wymienna.",
             employeeId: EMP4_ID
           }
         ]
@@ -571,47 +603,104 @@ db.products.insertMany([
     ]
   },
   {
-    code: "P1004",
-    name: "yLaptop Pro",
-    price: 6999.00,
+    code: "P1006",
+    name: "ySpeaker Max",
+    price: 499.01,
     status: "available",
-    category: "laptop",
+    category: "audio",
     questions: [
       {
-        title: "Czy obsługuje Linux?",
-        body: "Czy można zainstalować Linuxa?",
-        creationTime: new Date("2025-04-05T14:00:00Z"),
-        customerId: MAGDA_ID,  // <-- Added customerId reference
+        title: "Czy wspiera Bluetooth 5.2?",
+        body: "Zależy mi na najnowszym standardzie.",
+        creationTime: new Date("2025-04-12T17:10:00Z"),
+        customerId: TOMASZ_ID,
         answers: [
           {
-            body: "Tak, ale trzeba ręcznie skonfigurować sterowniki.",
-            employeeId: EMP5_ID
-          }
-        ]
-      },
-      {
-        title: "Czy ma HDMI?",
-        body: "Czy laptop posiada pełnowymiarowe HDMI?",
-        creationTime: new Date("2025-04-06T09:45:00Z"),
-        customerId: TOMASZ_ID,  // <-- Added customerId reference
-        answers: [
-          {
-            body: "Nie, tylko USB-C z DisplayPort.",
+            body: "Tak, model obsługuje Bluetooth 5.2.",
             employeeId: EMP6_ID
           }
         ]
+      }
+    ]
+  }
+]);
+
+db.orders.insertMany([
+  {
+    orderTime: new Date("2025-05-01T10:15:00Z"),
+    deliveryDate: new Date("2025-05-04T14:00:00Z"),
+    deliveryCost: 25.01,
+    orderStatus: "delivered",
+    customerId: JAN_ID,
+    details: [
+      {
+        productCode: "P1001", // yPhone X
+        quantity: 1,
+        transactionPrice: 3899.99,
+        discountPercentage: 2.5
+      }
+    ]
+  },
+  {
+    orderTime: new Date("2025-05-05T16:45:00Z"),
+    deliveryCost: 15.01,
+    orderStatus: "processing",
+    customerId: ANNA_ID,
+    details: [
+      {
+        productCode: "P1002", // yPad Mini
+        quantity: 2,
+        transactionPrice: 2899.50,
+        discountPercentage: 5.1
+      }
+    ]
+  },
+  {
+    orderTime: new Date("2025-05-08T09:30:00Z"),
+    deliveryDate: new Date("2025-05-10T11:00:00Z"),
+    deliveryCost: 30.01,
+    orderStatus: "delivered",
+    customerId: PIOTR_ID,
+    details: [
+      {
+        productCode: "P1003", // yWatch Ultra
+        quantity: 1,
+        transactionPrice: 1799.01,
+        discountPercentage: 0.1
       },
       {
-        title: "Czy ma podświetlaną klawiaturę?",
-        body: "Interesuje mnie praca w nocy.",
-        creationTime: new Date("2025-04-07T19:30:00Z"),
-        customerId: KAROLINA_ID,  // <-- Added customerId reference
-        answers: [
-          {
-            body: "Tak, z trzema poziomami jasności.",
-            employeeId: EMP1_ID
-          }
-        ]
+        productCode: "P1006", // ySpeaker Max
+        quantity: 1,
+        transactionPrice: 499.01,
+        discountPercentage: 2.1
+      }
+    ]
+  },
+  {
+    orderTime: new Date("2025-05-09T13:20:00Z"),
+    deliveryCost: 20.01,
+    orderStatus: "shipped",
+    customerId: MAGDA_ID,
+    details: [
+      {
+        productCode: "P1005", // yCamera Pro
+        quantity: 1,
+        transactionPrice: 2499.99,
+        discountPercentage: 10.1
+      }
+    ]
+  },
+  {
+    orderTime: new Date("2025-05-12T18:10:00Z"),
+    deliveryCost: 18.01,
+    orderStatus: "processing",
+    customerId: MAREK_ID,
+    details: [
+      {
+        productCode: "P1004", // yLaptop Pro
+        quantity: 1,
+        transactionPrice: 6799.01,
+        discountPercentage: 5.1
       }
     ]
   }

@@ -1,3 +1,7 @@
+// DATABASE USE
+const DB_NAME = "pear";
+use(DB_NAME);
+
 // CUSTOMERS
 db.createCollection("customers", {
   validator: {

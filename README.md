@@ -1,11 +1,12 @@
 # db-sql-nosql
-Database management (SQL &amp; noSQL) <br>
+Database management (SQL &amp; noSQL) \
 
-**mySQL**, **MySQL Workbench**; **MongoDB**
+**mySQL**, **MySQL Workbench**; **MongoDB**, **Mongo Compass**
 
 
-## Simple guide
+## Simple mySQL guide
 - remove any `VISIBLE` from exported SQL
+<br><br>
 
 
 Shields: [![EPL-2.0][epl2-shield]][epl2]

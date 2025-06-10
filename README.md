@@ -1,13 +1,13 @@
 # db-sql-nosql
 Database management (SQL &amp; noSQL) \
-
 **mySQL**, **MySQL Workbench**; **MongoDB**, **Mongo Compass**
-
 
 ## Simple mySQL guide
 - remove any `VISIBLE` from exported SQL
 <br><br>
 
+
+![Finished](https://img.shields.io/badge/status-Finished%20%F0%9F%94%9A-3CB371?style=for-the-badge&logo=github) 
 
 Shields: [![EPL-2.0][epl2-shield]][epl2]
 
